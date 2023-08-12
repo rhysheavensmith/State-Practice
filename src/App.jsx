@@ -14,13 +14,11 @@ export default function App() {
   ];
 
   const handleStepUp = () => {
-    step < 3 && setStep(step + 1);
-    step === 3 && setStep(1);
+    setStep(step === 3 ? 1 : step + 1);
   };
 
   const handleStepDown = () => {
-    step > 1 && setStep(step - 1);
-    step === 1 && setStep(3);
+    setStep(step === 1 ? 3 : step - 1);
   };
 
   const handleOpen = () => {
@@ -38,11 +36,11 @@ export default function App() {
           Open Steps Project
         </h1>
       )}
-      <div className={isOpen === true ? "steps" : "hidden"}>
+      <div className={isOpen ? "steps" : "hidden"}>
         <div className="numbers">
-          <div className={step === 1 && "active"}>1</div>
-          <div className={step === 2 && "active"}>2</div>
-          <div className={step === 3 && "active"}>3</div>
+          <div className={step === 1 ? "active" : ""}>1</div>
+          <div className={step === 2 ? "active" : ""}>2</div>
+          <div className={step === 3 ? "active" : ""}>3</div>
         </div>
         <p className="message">
           Step {step}: {messages[step - 1]}
