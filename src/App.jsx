@@ -27,13 +27,13 @@ export default function App() {
 
   return (
     <div>
-      {isOpen === true ? (
-        <h1 className="close" onClick={handleOpen}>
-          close
-        </h1>
+      {isOpen ? (
+        <button className="close" onClick={handleOpen}>
+          &times;
+        </button>
       ) : (
-        <h1 className="close" onClick={handleOpen}>
-          open
+        <h1 className="open" onClick={handleOpen}>
+          Open Steps Project
         </h1>
       )}
       <div className={isOpen === true ? "steps" : "hidden"}>
