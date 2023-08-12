@@ -15,10 +15,12 @@ export default function App() {
 
   const handleStepUp = () => {
     step < 3 && setStep(step + 1);
+    step === 3 && setStep(1);
   };
 
   const handleStepDown = () => {
     step > 1 && setStep(step - 1);
+    step === 1 && setStep(3);
   };
 
   const handleOpen = () => {
